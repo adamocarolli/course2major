@@ -1,32 +1,20 @@
+const path = require('path');
 const express = require('express');
+
+const indexRoutes = require('./routes/index');
+const programsRoutes = require('./routes/api/programs');
 
 const app = express();
 
-app.get('/', (req, res) => {
-  res.status(200);
-  res.send('Display index page here.');
-});
+// VIEW ENGINE
+app.set('view engine', 'html');
 
-// PROGRAM API
-app.get('/api/programs', (req, res) => {
-  res.status(200);
-  res.send('GET /api/programs');
-});
+// MIDDLEWARE
+app.use(express.static(path.join(__dirname, '../client')));
 
-app.post('/api/programs', (req, res) => {
-  res.status(201);
-  res.send('POST /api/programs');
-});
-
-app.put('/api/programs/:id', (req, res) => {
-  res.status(200);
-  res.send(`PUT /api/programs/${req.params.id}`);
-});
-
-app.delete('/api/programs/:id', (req, res) => {
-  res.status(204);
-  res.send(`DELETE /api/programs/${req.params.id}`);
-});
+// ROUTES
+app.use('/', indexRoutes);
+app.use('/', programsRoutes);
 
 app.listen(3000, () => {
   console.log('listening on 3000'); // eslint-disable-line
