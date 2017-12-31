@@ -16,6 +16,6 @@ app.use(express.static(path.join(__dirname, '../client')));
 app.use('/', indexRoutes);
 app.use('/', programsRoutes);
 
-app.listen(3000, () => {
-  console.log('listening on 3000'); // eslint-disable-line
+app.listen(process.env.PORT || 5000, () => {
+  console.log('Express server is running!'); // eslint-disable-line
 });
