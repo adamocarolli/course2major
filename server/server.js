@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require('express');
+const config = require('./config');
 
 const indexRoutes = require('./routes/index');
 const programsRoutes = require('./routes/api/programs');
@@ -16,6 +17,6 @@ app.use(express.static(path.join(__dirname, '../client')));
 app.use('/', indexRoutes);
 app.use('/', programsRoutes);
 
-app.listen(process.env.PORT || 5000, () => {
+app.listen(config.port, () => {
   console.log('Express server is running!'); // eslint-disable-line
 });
