@@ -22,6 +22,7 @@
   "homepage": "https://github.com/adamocarolli/course2major#readme",
   "dependencies": {
     "express": "^4.16.2",
+    "mongoose": "^5.0.0-rc0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
