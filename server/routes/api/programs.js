@@ -1,23 +1,16 @@
 const router = require('express').Router();
+const ProgramController = require('../../controllers/program');
 
-router.get('/api/programs', (req, res) => {
-  res.status(200);
-  res.send('GET /api/programs');
-});
+// Get all programs
+router.get('/api/programs', ProgramController.getPrograms);
 
-router.post('/api/programs', (req, res) => {
-  res.status(201);
-  res.send('POST /api/programs');
-});
+// Add a program
+router.post('/api/programs', ProgramController.addProgram);
 
-router.put('/api/programs/:id', (req, res) => {
-  res.status(200);
-  res.send(`PUT /api/programs/${req.params.id}`);
-});
+// Update a program
+router.put('/api/programs/:id', ProgramController.updateProgram);
 
-router.delete('/api/programs/:id', (req, res) => {
-  res.status(204);
-  res.send(`DELETE /api/programs/${req.params.id}`);
-});
+// Delete a program
+router.delete('/api/programs/:id', ProgramController.deleteProgram);
 
 module.exports = router;
