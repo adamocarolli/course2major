@@ -10,7 +10,7 @@ module.exports = {
   getPrograms: (req, res) => {
     Program.find().exec((err, programs) => {
       if (err) {
-      	res.status(500).send(err);
+        res.status(500).send(err);
       } else {
         res.status(200).json({ programs });
       }
@@ -28,9 +28,9 @@ module.exports = {
 
     newProgram.save((err, saved) => {
       if (err) {
-      	res.status(500).send(err);
+        res.status(500).send(err);
       } else {
-      	res.status(201).json(saved);
+        res.status(201).json(saved);
       }
     });
   },
@@ -53,14 +53,14 @@ module.exports = {
    * @returns void
    */
   deleteProgram: (req, res) => {
-  	Program.findOne({ id: req.params.id }).exec((err, program) => {
+    Program.findOne({ id: req.params.id }).exec((err, program) => {
       if (err) {
-      	res.status(500).send(err);
+        res.status(500).send(err);
       } else {
-      	program.remove(() => {
+        program.remove(() => {
           res.status(204).end();
-      	});
+        });
       }
-  	});
+    });
   },
 };
