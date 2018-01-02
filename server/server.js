@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 // Import requried modules
 const config = require('./config');
@@ -25,10 +26,9 @@ mongoose.connect(config.mongoURL, (error) => {
 // VIEW ENGINE
 app.set('view engine', 'html');
 
-// MIDDLEWARE
+// Apply body parser, servers public assets and routes
+app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../client')));
-
-// ROUTES
 app.use('/', indexRoutes);
 app.use('/', programsRoutes);
 

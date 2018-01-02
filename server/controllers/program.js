@@ -1,3 +1,5 @@
+const Program = require('../models/program');
+
 module.exports = {
   /**
    * Get all programs
@@ -6,8 +8,13 @@ module.exports = {
    * @returns void
    */
   getPrograms: (req, res) => {
-    res.status(200);
-    res.send('GET /api/programs');
+    Program.find().exec((err, programs) => {
+      if (err) {
+      	res.status(500).send(err);
+      } else {
+        res.status(200).json({ programs });
+      }
+    });
   },
 
   /**
@@ -17,8 +24,15 @@ module.exports = {
    * @returns void
    */
   addProgram: (req, res) => {
-    res.status(201);
-    res.send('POST /api/programs');
+    const newProgram = new Program(req.body.program);
+
+    newProgram.save((err, saved) => {
+      if (err) {
+      	res.status(500).send(err);
+      } else {
+      	res.status(201).json(saved);
+      }
+    });
   },
 
   /**
@@ -39,7 +53,14 @@ module.exports = {
    * @returns void
    */
   deleteProgram: (req, res) => {
-    res.status(204);
-    res.send(`DELETE /api/programs/${req.params.id}`);
+  	Program.findOne({ id: req.params.id }).exec((err, program) => {
+      if (err) {
+      	res.status(500).send(err);
+      } else {
+      	program.remove(() => {
+          res.status(204).end();
+      	});
+      }
+  	});
   },
 };
