@@ -24,7 +24,7 @@ module.exports = {
    * @returns void
    */
   addProgram: (req, res) => {
-    const newProgram = new Program(req.body.program);
+    const newProgram = new Program({ id: req.body.id });
 
     newProgram.save((err, saved) => {
       if (err) {
