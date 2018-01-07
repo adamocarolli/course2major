@@ -2,6 +2,9 @@ const mongoose = require('mongoose');
 
 const courseSchema = new mongoose.Schema({
   id: { type: 'String', required: true },
+}, {
+  toObject: { virtuals: true },
+  toJSON: { virtuals: true },
 });
 
 // Define many-to-many relationship between programs and courses.

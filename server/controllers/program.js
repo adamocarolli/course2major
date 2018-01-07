@@ -1,4 +1,5 @@
 const Program = require('../models/program');
+const Course = require('../models/course');
 
 module.exports = {
   /**
@@ -8,13 +9,15 @@ module.exports = {
    * @returns void
    */
   getPrograms: (req, res) => {
-    Program.find().exec((err, programs) => {
-      if (err) {
-        res.status(500).send(err);
-      } else {
-        res.status(200).json({ programs });
-      }
-    });
+    Program.find()
+      .populate('courses')
+      .exec((err, programs) => {
+        if (err) {
+          res.status(500).send(err);
+        } else {
+          res.status(200).json({ programs });
+        }
+      });
   },
 
   /**
@@ -60,6 +63,48 @@ module.exports = {
         program.remove(() => {
           res.status(204).end();
         });
+      }
+    });
+  },
+
+  /**
+   * Get a program
+   * @param req
+   * @param res
+   * @returns void
+   */
+  getProgram: (req, res) => {
+    Program.findOne({ id: req.params.id })
+      .populate('courses')
+      .exec((err, program) => {
+        if (err) {
+          res.status(500).send(err);
+        } else {
+          res.status(200).json(program);
+        }
+      });
+  },
+
+  /**
+   * Add required course to program
+   * @param req
+   * @param res
+   * @returns void
+   */
+  addCourse: (req, res) => {
+    Course.findOne({ id: req.params.cid }).exec((findCourseErr, course) => {
+      if (findCourseErr) {
+        res.status(500).send(findCourseErr);
+      } else {
+        Program.findOneAndUpdate({ id: req.params.pid }, { $push: { courses: course } })
+          .populate('courses')
+          .exec((findAndUpdateProgramErr, program) => {
+            if (findAndUpdateProgramErr) {
+              res.status(500).send(findAndUpdateProgramErr);
+            } else {
+              res.status(200).json(program);
+            }
+          });
       }
     });
   },

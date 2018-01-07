@@ -10,6 +10,7 @@ const data = require('./data');
 // Import required routes
 const indexRoutes = require('./routes/index');
 const programsRoutes = require('./routes/api/programs');
+const coursesRoutes = require('./routes/api/courses');
 
 const app = express();
 
@@ -31,6 +32,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../client')));
 app.use('/', indexRoutes);
 app.use('/', programsRoutes);
+app.use('/', coursesRoutes);
 
 app.listen(config.port, () => {
   console.log('Express server is running!'); // eslint-disable-line
