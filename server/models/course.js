@@ -10,7 +10,7 @@ const courseSchema = new mongoose.Schema({
 // but a course can be a requirement for hundreds of programs.
 courseSchema.virtual('programs', {
   ref: 'Program',
-  localfield: '_id',
+  localField: '_id',
   foreignField: 'courses',
 });
 
