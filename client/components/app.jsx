@@ -18,41 +18,32 @@ const PROGRAMS = [
 ];
 
 
-class ProgramRow extends React.Component {
+class ProgramGridItem extends React.Component {
   render() {
     const program = this.props.program;
 
     return (
-      <tr>
-        <td>{program.id}</td>
-        <td>{program.name}</td>
-      </tr>
+      <div class='program-grid-item'>
+        <div class='program-name'>{program.name}</div>
+      </div>
     );
   }
 }
 
-class ProgramTable extends React.Component {
+class ProgramGridContainer extends React.Component {
   render() {
-    const rows = [];
+    const items = [];
 
     this.props.programs.forEach((program) => {
-      rows.push(
-        <ProgramRow
+      items.push(
+        <ProgramGridItem
           program={program}
           key={program.id} />
       );
     });
 
     return (
-      <table>
-        <thead>
-          <tr>
-            <th>PID</th>
-            <th>Name</th>
-          </tr>
-        </thead>
-        <tbody>{rows}</tbody>
-      </table>
+      <div class='program-grid-container'>{items}</div>
     );
   }
 }
@@ -67,12 +58,12 @@ class SearchBar extends React.Component {
   }
 }
 
-class FilterableProgramTable extends React.Component {
+class FilterableProgramGridContainer extends React.Component {
   render() {
     return (
       <div>
         <SearchBar />
-        <ProgramTable programs={this.props.programs} />
+        <ProgramGridContainer programs={this.props.programs} />
       </div>
     );
   }
@@ -83,8 +74,8 @@ export class App extends React.Component {
     return (
       <div>
         <h1>Welcome to the course2major application!</h1>
-        <FilterableProgramTable programs={PROGRAMS}/>
+        <FilterableProgramGridContainer programs={PROGRAMS}/>
       </div>
-    )
+    );
   }
 }
