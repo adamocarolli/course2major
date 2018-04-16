@@ -1,4 +1,7 @@
 # course2major
+Course2major is a web application that recommends programs of study to University of Toronto students based on the courses students have previously taken or are interested in taking.  
+
+Course2major is a project conceived of by members of the Victoria College Office of the Registrar and built in collaboration with the University of Toronto Design Club.
 
 ## Installation
 Here we explain how to install and launch course2major locally on macOS. Although similar instructions likely work on other OS variants, we have only tested these instructions on a machine meeting the following requirements:
