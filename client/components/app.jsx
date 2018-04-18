@@ -14,6 +14,10 @@ const COURSES = {
 const PROGRAMS = [
   {id: 'asmaj1689', name: 'Computer Science',  courses: [COURSES['csc148h1'], COURSES['csc165h1'], COURSES['csc240h1']]},
   {id: 'asmaj1446', name: 'Cognitive Science', courses: [COURSES['cog250y1']]},
+  {id: 'asspe1645', name: 'English', courses: [COURSES['eng110y1'], COURSES['eng140y1'], COURSES['eng150y1']]},
+  {id: 'asspe1645', name: 'English', courses: [COURSES['eng110y1'], COURSES['eng140y1'], COURSES['eng150y1']]},
+  {id: 'asspe1645', name: 'English', courses: [COURSES['eng110y1'], COURSES['eng140y1'], COURSES['eng150y1']]},
+  {id: 'asspe1645', name: 'English', courses: [COURSES['eng110y1'], COURSES['eng140y1'], COURSES['eng150y1']]},
   {id: 'asspe1645', name: 'English', courses: [COURSES['eng110y1'], COURSES['eng140y1'], COURSES['eng150y1']]}
 ];
 
@@ -52,7 +56,7 @@ class SearchBar extends React.Component {
   render() {
     return (
       <form>
-        <input type="text" placeholder="Search..." />
+        <input class='search rounded' type="text" placeholder="Search..." />
       </form>
     );
   }

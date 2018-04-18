@@ -1,13 +1,14 @@
 .program-grid-container {
   display: grid;
-  grid-gap: 20px 20px;
-  grid-template-columns: 400px 400px 400px 400px;
+  grid-gap: 26px 31px;
+  grid-template-columns: 302px 302px 302px 302px;
   padding: 10px;
+  justify-content: center;
 }
 .program-grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
+  background-color: #ACE6A4;
   padding: 20px;
   font-size: 30px;
   text-align: left;
+  height: 489px;
 }
