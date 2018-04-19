@@ -12,3 +12,17 @@
   text-align: left;
   height: 489px;
 }
+
+.program-search-container form {
+  margin: auto;
+  width: 828px;
+}
+
+.program-search-container input {
+  width: 738px;
+  border-radius: 25px;
+  border-color: blue;
+  border-style: solid;
+  padding-left: 10px;
+  padding-right: 10px;
+}

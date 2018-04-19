@@ -55,9 +55,12 @@ class ProgramGridContainer extends React.Component {
 class SearchBar extends React.Component {
   render() {
     return (
-      <form>
-        <input class='search rounded' type="text" placeholder="Search..." />
-      </form>
+      <div class='program-search-container'>
+        <form>
+          <input type="text" placeholder="Search..." />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     );
   }
 }
