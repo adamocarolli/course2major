@@ -1,6 +1,5 @@
 import React from 'react';
-import Autosuggest from 'react-autosuggest';
-
+import SearchBar from './searchbar.jsx'
 
 // Temporary constant to fill programs
 const COURSES = {
@@ -12,17 +11,6 @@ const COURSES = {
   'eng140y1': {id: 'eng140y1'},
   'eng150y1': {id: 'eng150y1'}
 }
-
-// Temporary constant placeholder for return from API call: get api/courses
-const COURSES_API = [
-  {id: 'csc148h1'},
-  {id: 'csc165h1'},
-  {id: 'csc240h1'},
-  {id: 'cog250y1'},
-  {id: 'eng110y1'},
-  {id: 'eng140y1'},
-  {id: 'eng150y1'}
-]
 
 // Temporary constant placeholder for return from API call: get api/programs
 const PROGRAMS = [
@@ -62,78 +50,6 @@ class ProgramGridContainer extends React.Component {
 
     return (
       <div class='program-grid-container'>{items}</div>
-    );
-  }
-}
-
-// Get suggestions given an input value.
-const getCourseIDSuggestions = value => {
-  const inputValue = value.trim().toLowerCase();
-  const inputLength = inputValue.length;
-
-  return inputLength === 0 ? [] : COURSES_API.filter(course =>
-    course.id.toLowerCase().slice(0, inputLength) === inputValue
-  );
-};
-
-// When suggestion is clicked, provide Autosuggest with course id.
-const getSuggestionCourseID = suggestion => suggestion.id;
-
-const renderSuggestion = suggestion => (
-  <div>
-    {suggestion.id}
-  </div>
-);
-
-class SearchBar extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      value: '',
-      suggestions: []
-    };
-  }
-
-  onChange = (event, { newValue }) => {
-    this.setState({
-      value: newValue
-    });
-  };
-
-  // Autosuggest calls this function to update suggestions when search query is changed.
-  onSuggestionsFetchRequested = ({ value }) => {
-    this.setState({
-      suggestions: getCourseIDSuggestions(value)
-    });
-  };
-
-  // Autosuggest calls this function to clear previous suggestions.
-  onSuggestionsClearRequested = () => {
-    this.setState({
-      suggestions: []
-    });
-  };
-
-  render() {
-    const { value, suggestions } = this.state;
-
-    // Autosuggest will pass through all these props to the input.
-    const inputProps = {
-      placeholder: 'Type a programming language',
-      value,
-      onChange: this.onChange
-    };
-
-    return (
-      <Autosuggest
-        suggestions={suggestions}
-        onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-        onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-        getSuggestionValue={getSuggestionCourseID}
-        renderSuggestion={renderSuggestion}
-        inputProps={inputProps}
-      />
     );
   }
 }
