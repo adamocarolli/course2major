@@ -1,32 +1,3 @@
 @import "autosuggest.css";
 @import "tags.css";
-
-
-.program-grid-container {
-  display: grid;
-  grid-gap: 26px 31px;
-  grid-template-columns: 302px 302px 302px 302px;
-  padding: 10px;
-  justify-content: center;
-}
-.program-grid-item {
-  background-color: #ACE6A4;
-  padding: 20px;
-  font-size: 30px;
-  text-align: left;
-  height: 489px;
-}
-
-.program-search-container form {
-  margin: auto;
-  width: 828px;
-}
-
-.program-search-container input {
-  width: 738px;
-  border-radius: 25px;
-  border-color: blue;
-  border-style: solid;
-  padding-left: 10px;
-  padding-right: 10px;
-}
+@import "programgrid.css";
