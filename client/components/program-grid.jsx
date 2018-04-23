@@ -9,7 +9,11 @@ class ProgramGridItem extends React.Component {
   render() {
     return (
       <li id={this.props.id} className='program-grid-item'>
-        <h3 className='program-name'>{this.props.name}</h3>
+        <b>{this.props.name}</b>
+        <div>{this.props.degreeOfSpecialization}</div>
+        <div>Type: {this.props.type}</div>
+        <div>Bachelor of {this.props.bachelorOf}</div>
+        <a href={this.props.link}>More</a>
       </li>
     );
   }

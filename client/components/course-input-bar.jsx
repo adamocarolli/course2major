@@ -11,7 +11,13 @@ function getCourses () {
     {id: 'cog250y1'},
     {id: 'eng110y1'},
     {id: 'eng140y1'},
-    {id: 'eng150y1'}
+    {id: 'eng150y1'},
+    {id: 'bio130h1'},
+    {id: 'bio150y1'},
+    {id: 'chm138h1'},
+    {id: 'chm139h1'},
+    {id: 'phl100y1'},
+    {id: 'new232y1'}
   ];
 }
 
