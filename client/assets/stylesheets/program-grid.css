@@ -11,4 +11,21 @@
   font-size: 30px;
   height: 489px;
   list-style-type: none;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
 }
+
+/* .program-search-container {
+  margin: auto;
+  width: 828px;
+}
+
+.program-search-container {
+  width: 738px;
+  border-radius: 25px;
+  border-color: blue;
+  border-style: solid;
+  padding-left: 10px;
+  padding-right: 10px;
+} */
