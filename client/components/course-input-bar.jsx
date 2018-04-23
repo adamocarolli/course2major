@@ -15,16 +15,17 @@ function getCourses () {
   ];
 }
 
-class Autocomplete extends React.Component {
-  constructor () {
-    super()
+class CourseInputBar extends React.Component {
+  constructor (props) {
+    super(props)
     this.state = {
       tags: []
     }
   }
 
   handleChange (tags) {
-    this.setState({tags})
+    this.setState({tags});
+    this.props.sortPrograms(tags);
   }
 
   render () {
@@ -65,12 +66,4 @@ class Autocomplete extends React.Component {
   }
 }
 
-class SearchBar extends React.Component {
-  render() {
-    return (
-      <Autocomplete />
-    );
-  }
-}
-
-export default SearchBar
+export default CourseInputBar

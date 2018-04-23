@@ -22,11 +22,15 @@
   "homepage": "https://github.com/adamocarolli/course2major#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "classnames": "^2.2.5",
     "express": "^4.16.2",
+    "lodash": "^4.17.5",
+    "moment": "^2.22.1",
     "mongoose": "^5.0.0-rc0",
     "react": "^16.2.0",
     "react-autosuggest": "^9.3.4",
     "react-dom": "^16.2.0",
+    "react-flip-move": "^3.0.1",
     "react-tagsinput": "^3.19.0"
   },
   "devDependencies": {

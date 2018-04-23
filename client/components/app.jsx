@@ -1,5 +1,5 @@
 import React from 'react';
-import FilterableProgramGridContainer from './programgrid.jsx'
+import SortableProgramGridContainer from './program-grid.jsx'
 
 
 // Temporary constant to fill programs
@@ -18,10 +18,10 @@ const PROGRAMS = [
   {id: 'asmaj1689', name: 'Computer Science',  courses: [COURSES['csc148h1'], COURSES['csc165h1'], COURSES['csc240h1']]},
   {id: 'asmaj1446', name: 'Cognitive Science', courses: [COURSES['cog250y1']]},
   {id: 'asspe1645', name: 'English', courses: [COURSES['eng110y1'], COURSES['eng140y1'], COURSES['eng150y1']]},
-  {id: 'asspe1645', name: 'English', courses: [COURSES['eng110y1'], COURSES['eng140y1'], COURSES['eng150y1']]},
-  {id: 'asspe1645', name: 'English', courses: [COURSES['eng110y1'], COURSES['eng140y1'], COURSES['eng150y1']]},
-  {id: 'asspe1645', name: 'English', courses: [COURSES['eng110y1'], COURSES['eng140y1'], COURSES['eng150y1']]},
-  {id: 'asspe1645', name: 'English', courses: [COURSES['eng110y1'], COURSES['eng140y1'], COURSES['eng150y1']]}
+  {id: 'asspe1646', name: 'English', courses: [COURSES['eng110y1'], COURSES['eng140y1'], COURSES['eng150y1']]},
+  {id: 'asspe1647', name: 'English', courses: [COURSES['eng110y1'], COURSES['eng140y1'], COURSES['eng150y1']]},
+  {id: 'asspe1648', name: 'English', courses: [COURSES['eng110y1'], COURSES['eng140y1'], COURSES['eng150y1']]},
+  {id: 'asspe1649', name: 'English', courses: [COURSES['eng110y1'], COURSES['eng140y1'], COURSES['eng150y1']]}
 ];
 
 export class App extends React.Component {
@@ -29,7 +29,7 @@ export class App extends React.Component {
     return (
       <div>
         <h1>Welcome to the course2major application!</h1>
-        <FilterableProgramGridContainer programs={PROGRAMS}/>
+        <SortableProgramGridContainer programs={PROGRAMS} />
       </div>
     );
   }
