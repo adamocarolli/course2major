@@ -74,21 +74,20 @@ class SortableProgramGridContainer extends React.Component {
 
   render() {
     return (
-      <div className="program-grid-container">
+      <div>
         <header>
           <CourseInputBar sortPrograms={this.sortPrograms}/>
         </header>
-        <div>
-          <FlipMove
-            staggerDurationBy="30"
-            duration={500}
-            enterAnimation={this.state.enterLeaveAnimation}
-            leaveAnimation={this.state.enterLeaveAnimation}
-            typeName="ul"
-          >
-            { this.renderprograms() }
-          </FlipMove>
-        </div>
+        <FlipMove
+          staggerDurationBy="30"
+          duration={500}
+          enterAnimation={this.state.enterLeaveAnimation}
+          leaveAnimation={this.state.enterLeaveAnimation}
+          typeName="ul"
+          className="program-grid-container"
+        >
+          { this.renderprograms() }
+        </FlipMove>
         <footer>
         </footer>
       </div>
