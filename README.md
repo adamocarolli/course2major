@@ -2,6 +2,8 @@
 
 ### [Demo](https://calm-headland-39002.herokuapp.com/)
 
+[![Demo](./misc/example.gif)](https://calm-headland-39002.herokuapp.com/)
+
 Course2major is a web application that recommends programs of study to University of Toronto students based on the courses students have previously taken or are interested in taking.  
 
 Course2major is a project conceived of by members of the Victoria College Office of the Registrar and built in collaboration with the University of Toronto Design Club.
