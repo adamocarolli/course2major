@@ -7,12 +7,9 @@ export class App extends React.Component {
   render() {
     return (
       <div>
-        <header>
-          <h1>Welcome to the course2major application!</h1>
-        </header>
+        <header></header>
         <SortableProgramGridContainer programs={PROGRAMS} />
-        <footer>
-        </footer>
+        <footer></footer>
       </div>
     );
   }

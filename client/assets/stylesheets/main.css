@@ -1,3 +1,30 @@
 @import "autosuggest.css";
 @import "tags.css";
 @import "program-grid.css";
+
+
+body {
+  margin: 0;
+}
+
+#masthead {
+  background-color: #0C2859;
+  height: 318px;
+  width: 100%;
+  display: inline-block;
+}
+
+#masthead .logo {
+  margin-left: 63px;
+  margin-top: 58px;
+  height: 90px;
+  width: 408px;
+}
+
+#masthead .title {
+  margin-left: 318px;
+  margin-top: 75px;
+  height: 73px;
+  width: 438px;
+  display: block;
+}
