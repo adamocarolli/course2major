@@ -1,3 +1,5 @@
+@import "fonts.css";
+
 .program-grid-container {
   display: grid;
   grid-gap: 26px 31px;
@@ -9,6 +11,7 @@
   background-color: #ACE6A4;
   padding: 20px;
   font-size: 30px;
+  font-family: 'proxima_nova_rgregular';
   height: 489px;
   list-style-type: none;
   overflow-y: scroll;
@@ -16,16 +19,12 @@
 
 }
 
-/* .program-search-container {
-  margin: auto;
-  width: 828px;
+.course-input-bar {
+  width: 798px;
+  margin: 113px auto;
+  height: 48px;
 }
 
-.program-search-container {
-  width: 738px;
-  border-radius: 25px;
-  border-color: blue;
-  border-style: solid;
-  padding-left: 10px;
-  padding-right: 10px;
-} */
+.query-input-form {
+  overflow: -webkit-paged-y;
+}
