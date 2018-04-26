@@ -33,3 +33,9 @@ npm run webpack
 npm run start
 ```
 7. Application should now be viewable at: http://localhost:5000/
+
+## Design Assets
+
+At the below link all design assets can be found (Created by the University of Toronto Design Club):
+
+https://drive.google.com/drive/folders/11yYBeQG-lQp3qtue83Oyl8DNAW8Zsi3b
