@@ -79,7 +79,7 @@ class SortableProgramGridContainer extends React.Component {
   render() {
     return (
       <div>
-        <header>
+        <header className="query-input-form">
           <CourseInputBar sortPrograms={this.sortPrograms}/>
         </header>
         <FlipMove

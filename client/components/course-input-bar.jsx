@@ -68,7 +68,11 @@ class CourseInputBar extends React.Component {
       )
     }
 
-    return <TagsInput renderInput={autocompleteRenderInput} value={this.state.tags} onChange={::this.handleChange} />
+    return (
+      <div className="course-input-bar">
+        <TagsInput renderInput={autocompleteRenderInput} value={this.state.tags} onChange={::this.handleChange} />
+      </div>
+    )
   }
 }
 
