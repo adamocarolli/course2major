@@ -15,26 +15,32 @@ Here we explain how to install and launch course2major locally on macOS. Althoug
 - macOS 10.12.6 (Sierra) or higher
 
 Take the following steps to install and launch course2major:
-1. Start a terminal (a shell). All subsequent steps are to be performed in this shell.
-2. Ensure Homebrew is installed on your machine.
-3. Install Node.js by issuing the following commands:
+1. Ensure Homebrew is installed on your machine.
+2. Ensure MongoDB is installed on your machine.
+3. Start a terminal (a shell). Subsequent steps are to be performed in this shell.
+4. Install Node.js by issuing the following commands:
 ```
 brew update
 brew install node
 ```
-4. Install required application dependencies by issuing the following command:
+5. Install required application dependencies by issuing the following command:
 ```
 npm install
 ```
-5. Compile JavaScript modules by issuing the following command:
+6. Compile JavaScript modules by issuing the following command:
 ```
-npm run webpack
+npm run build
 ```
-6. Issue the following command to run application:
+7. Open a new terminal (a shell). Subsequent steps are to be performed in this shell.
+8. Start MongoDB server by issuing the following command:
+```
+mongod
+```
+9. Open a new terminal (a shell). Subsequent steps are to be performed in this shell.
 ```
 npm run start
 ```
-7. Application should now be viewable at: http://localhost:5000/
+10. Application should now be viewable at: http://localhost:5000/
 
 ## Design Assets
 
