@@ -1,7 +1,7 @@
 # course2major
 
 ### [Demo](https://calm-headland-39002.herokuapp.com/)
-### [API DOCS (Incomplete)](https://course2major.docs.apiary.io/#)
+### [API DOCS](https://course2major.docs.apiary.io/#)
 
 [![Demo](./misc/example.gif)](https://calm-headland-39002.herokuapp.com/)
 
